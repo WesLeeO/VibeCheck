@@ -15,6 +15,7 @@ function App() {
     
     setLoading(true);
     try {
+     //const res = await fetch(http://localhost:8000/analyze/${username});
       const res = await fetch(`https://vibecheck-tkk2.onrender.com/analyze/${username}`);
       const data = await res.json();
       setError(false)
