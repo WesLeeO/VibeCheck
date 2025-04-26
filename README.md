@@ -3,7 +3,7 @@
 **VibeCheck** is a web app that analyzes the overall sentiment and emotional tone of a Twitter user's recent tweets.  
 It uses **FastAPI** for the backend and machine learning models for NLP analysis.
 
-Available at: [Link Text](https://wesleeo.github.io/VibeCheck/)
+Available at: [Click Here](https://wesleeo.github.io/VibeCheck/)
 
 ---
 
