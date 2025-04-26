@@ -4,6 +4,8 @@ from tweet_fetcher import get_recent_tweets
 from sentiment import analyze_sentiment
 from tweet_analyzer import TweetAnalyzer
 from profile_fetcher import get_profile_info
+import uvicorn 
+import os
 
 app = FastAPI()
 
