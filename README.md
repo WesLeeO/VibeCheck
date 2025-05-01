@@ -29,40 +29,6 @@ It leverages **FastAPI** for the backend and state-of-the-art NLP models for rea
 
 ---
 
-## 📂 Repository Structure
-
-📂 VibeCheck/
-.
-├── backend
-│   ├── api.py # Main API endpoints (if separate from modal)
-│   ├── profile_fetcher.py # Fetches Twitter profile data
-│   ├── requirements.txt  # Python dependencies
-│   ├── sentiment.py  # NLP sentiment analysis
-│   ├── tweet_analyzer.py # Processes tweet data
-│   ├── tweet_fetcher.py # Handles Twitter API calls
-│   └── vibecheck_modal.py # Modal backend
-├── frontend
-│   ├── dist
-│   │   ├── assets
-│   │   ├── index.html
-│   │   └── vite.svg
-│   ├── public
-│   │   └── vite.svg
-│   ├── src
-│   │   ├── assets
-│   │   ├── App.css
-│   │   ├── App.jsx # Main page
-│   │   ├── index.css
-│   │   └── main.jsx
-│   ├── README.md
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── tailwind.config.js
-│   └── vite.config.js
-├── README.md
-
 ## 🛠️ Deployment Notes
 
 The backend is deployed using **Modal**, which provides serverless infrastructure with optional GPU acceleration.  
