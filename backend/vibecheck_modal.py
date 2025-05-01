@@ -21,7 +21,7 @@ fapp.add_middleware(
 # Set up the image with required dependencies
 image = (
     modal.Image.debian_slim()
-    .pip_install("transformers", "torch", "fastapi", "uvicorn", "pydantic", "tweepy", "beautifulsoup4", "scikit-learn")
+    .pip_install("transformers", "torch", "numpy", "fastapi", "uvicorn", "pydantic", "python-dotenv", "matplotlib", "wordcloud")
     .add_local_dir(".", remote_path="/root/vibecheck")  # Mounts the current directory to the container
 )
 
@@ -44,7 +44,6 @@ async def analyze_user(username: str):
     gpu="any",
     image=image,
     secrets=[twitter_secret],  # This makes the secret available to os.getenv()
-    web_endpoint=True
 )
 @asgi_app()
 def fastapi_app():

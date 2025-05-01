@@ -1,54 +1,66 @@
-# VibeCheck
+# 💫 VibeCheck
 
-**VibeCheck** is a web app that analyzes the overall sentiment and emotional tone of a Twitter user's recent tweets.  
-It uses **FastAPI** for the backend and machine learning models for NLP analysis.
+**VibeCheck** is a web application that analyzes the overall sentiment and emotional tone of a Twitter user's recent tweets.  
+It leverages **FastAPI** for the backend and state-of-the-art NLP models for real-time analysis.
 
-Available at: [Click Here](https://wesleeo.github.io/VibeCheck/)
-
----
-
-## Features
-- 🔎 Fetches recent tweets from a given username
-- 🤖 Analyzes sentiment (positive/neutral/negative) using a pre-trained model
-- 😎 Detects emotions like joy, anger, sadness, etc.
-- 🧠 Combines profile information and tweet analysis
-- 🚀 FastAPI backend with CORS enabled for frontend integration
+🔗 **Live demo:** [wesleeo.github.io/VibeCheck](https://wesleeo.github.io/VibeCheck/)
 
 ---
 
-## Tech Stack
-- **FastAPI** (Backend API)
-- **Hugging Face Transformers** (for Sentiment + Emotion models)
-- **TwitterAPI.io** (for fetching tweets)
-- **Python 3.10+**
+## ✨ Features
+
+- 🔎 Fetches recent tweets from any public Twitter account using **TwitterAPI.io**
+- 🤖 Performs sentiment analysis (positive / neutral / negative) with pre-trained transformer models
+- 😎 Detects emotions such as **joy**, **anger**, **sadness**, and more
+- 🧠 Combines tweet analysis with profile metadata for deeper insights
+- 🌐 Backend powered by **FastAPI**, with **CORS** enabled for frontend integration
+- 🚀 Fully deployed on **Modal** — a serverless GPU-enabled platform
 
 ---
 
-## How to Run Locally
+## 🧰 Tech Stack
 
-1. Clone the repo:
-    ```bash
-    git clone https://github.com/WesLeeO/VibeCheck.git
-    cd VibeCheck
-    ```
-
-2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Run the FastAPI server:
-    ```bash
-    uvicorn main:app --reload
-    ```
-
-4. Access the API at:
-    ```
-    http://127.0.0.1:8000/analyze/{username}
-    ```
+- **FastAPI** — High-performance Python framework for serving the backend API
+- **Modal** — Serverless cloud platform (GPU-enabled) used to host and scale the backend
+- **Hugging Face Transformers** — Pre-trained NLP models for sentiment and emotion classification
+- **PyTorch** — Deep learning engine used for model inference
+- **TwitterAPI.io** — External API for fetching tweets and user profile data
+- **Python 3.10+** — Core programming language for backend development
 
 ---
 
-## Example API Usage
+## 📂 Repository Structure
 
-**Endpoint:**
+📂 VibeCheck/
+│
+├── 📂 backend/
+│ ├── 📄 vibecheck_modal.py # Main Modal deployment file
+│ ├── 📄 tweet_fetcher.py # Twitter API interactions
+│ ├── 📄 sentiment.py # NLP model integration
+│ ├── 📄 tweet_analyzer.py # Analysis pipeline
+│ ├── 📄 profile_fetcher.py # User profile processing
+│ └── 📄 requirements.txt # Python dependencies
+│
+├── 📂 frontend/
+│ ├── 📂 public/
+│ ├── 📂 src/
+│ │ ├── 📂 components/
+│ │ ├── 📄 App.jsx # Main React component
+│ │ └── 📄 main.jsx # Entry point
+│ ├── 📄 package.json
+│ └── 📄 vite.config.js
+│
+├── 📄 .env.sample # Environment template
+├── 📄 .gitignore
+├── 📄 README.md # Project documentation
+└── 📄 LICENSE
+
+
+## 🛠️ Deployment Notes
+
+The backend is deployed using **Modal**, which provides serverless infrastructure with optional GPU acceleration.  
+This allows the app to run powerful NLP pipelines on demand — without managing servers or containers.
+
+---
+
+Feel free to fork, contribute, or reach out with ideas! 🙌
