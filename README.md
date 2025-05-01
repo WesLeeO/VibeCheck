@@ -32,29 +32,36 @@ It leverages **FastAPI** for the backend and state-of-the-art NLP models for rea
 ## 📂 Repository Structure
 
 📂 VibeCheck/
-│
-├── 📂 backend/
-│ ├── 📄 vibecheck_modal.py # Main Modal deployment file
-│ ├── 📄 tweet_fetcher.py # Twitter API interactions
-│ ├── 📄 sentiment.py # NLP model integration
-│ ├── 📄 tweet_analyzer.py # Analysis pipeline
-│ ├── 📄 profile_fetcher.py # User profile processing
-│ └── 📄 requirements.txt # Python dependencies
-│
-├── 📂 frontend/
-│ ├── 📂 public/
-│ ├── 📂 src/
-│ │ ├── 📂 components/
-│ │ ├── 📄 App.jsx # Main React component
-│ │ └── 📄 main.jsx # Entry point
-│ ├── 📄 package.json
-│ └── 📄 vite.config.js
-│
-├── 📄 .env.sample # Environment template
-├── 📄 .gitignore
-├── 📄 README.md # Project documentation
-└── 📄 LICENSE
-
+.
+├── backend
+│   ├── api.py # Main API endpoints (if separate from modal)
+│   ├── profile_fetcher.py # Fetches Twitter profile data
+│   ├── requirements.txt  # Python dependencies
+│   ├── sentiment.py  # NLP sentiment analysis
+│   ├── tweet_analyzer.py # Processes tweet data
+│   ├── tweet_fetcher.py # Handles Twitter API calls
+│   └── vibecheck_modal.py # Modal backend
+├── frontend
+│   ├── dist
+│   │   ├── assets
+│   │   ├── index.html
+│   │   └── vite.svg
+│   ├── public
+│   │   └── vite.svg
+│   ├── src
+│   │   ├── assets
+│   │   ├── App.css
+│   │   ├── App.jsx # Main page
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── README.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── tailwind.config.js
+│   └── vite.config.js
+├── README.md
 
 ## 🛠️ Deployment Notes
 
