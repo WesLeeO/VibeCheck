@@ -9,7 +9,7 @@ twitter_api_key = os.getenv("TWITTER_API_KEY")
 
 
 
-def get_recent_tweets(username, limit = 50):
+def get_recent_tweets(username, limit = 10):
     url = "https://api.twitterapi.io/twitter/user/last_tweets"
     headers = {"X-API-Key": twitter_api_key}
     params = {"userName": username}
@@ -18,6 +18,7 @@ def get_recent_tweets(username, limit = 50):
         try:
             response = requests.request("GET", url, headers=headers, params=params)
             data = response.json()
+            print(f'data tweet {data}', flush=True)
             for tweet in data['data']['tweets']:
                 tweets.append((tweet['text'], tweet['createdAt']))
             if data['has_next_page']:
