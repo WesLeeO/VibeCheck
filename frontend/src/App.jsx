@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   const [username, setUsername] = useState("");
   const [info , setInfo] = useState({})
+  const [cloud, setCloud] = useState("")
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showEmotion, setShowEmotion] = useState(false);
@@ -15,12 +16,13 @@ function App() {
     
     setLoading(true);
     try {
-     //const res = await fetch(`http://localhost:8000/analyze/${username}`);
-      const res = await fetch(`https://wesleeo--vibecheck-nlp-fastapi-app.modal.run/analyze/${username}`)
+      const res = await fetch(`http://localhost:8000/analyze/${username}`);
+     // const res = await fetch(`https://wesleeo--vibecheck-nlp-fastapi-app.modal.run/analyze/${username}`)
      // const res = await fetch(`https://vibecheck-tkk2.onrender.com/analyze/${username}`);
       const data = await res.json();
       setError(false)
       setInfo(data.info)
+      setCloud(data.word_cloud)
       setResults(data.results.tweets);
       setShowEmotion(true)
     } catch (error) {
@@ -88,6 +90,8 @@ function App() {
         </div>
       )}
 
+      {cloud.length > 0  && <img src={cloud} alt="Word Cloud" className="mb-4 w-full max-w-2xl rounded shadow"/>}
+      
         {results.length > 0 && (
         <button 
           onClick={() => setShowEmotion(!showEmotion)}

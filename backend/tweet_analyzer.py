@@ -4,6 +4,8 @@ import numpy as np
 from datetime import datetime
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
+from io import BytesIO
+import base64
 
 class TweetAnalyzer:
     def __init__(self):
@@ -90,7 +92,7 @@ class TweetAnalyzer:
         return results
     
     # Implement your word cloud method here...
-    def generate_word_cloud(self, tweets):
+    def word_cloud(self, tweets):
         """Generate word cloud and return as base64 string"""
         wordcloud = WordCloud(width=800, height=400, background_color='white').generate(" ".join(tweets))
         fig, ax = plt.subplots(figsize=(10, 5))
@@ -98,3 +100,12 @@ class TweetAnalyzer:
         ax.axis("off")
         wordcloud_img = self.plot_to_base64(fig)
         return wordcloud_img
+    
+
+    def plot_to_base64(self, fig):
+        buf = BytesIO()
+        fig.savefig(buf, format="png", bbox_inches="tight")
+        buf.seek(0)
+        img_base64 = base64.b64encode(buf.read()).decode("utf-8")
+        plt.close(fig)
+        return img_base64
