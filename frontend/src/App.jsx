@@ -90,8 +90,17 @@ function App() {
         </div>
       )}
 
-      {cloud.length > 0  && <img src={cloud} alt="Word Cloud" className="mb-4 w-full max-w-2xl rounded shadow"/>}
-      
+    {cloud.length > 0 && (
+      <div className="text-center">
+        <p className="text-lg font-semibold mb-2">Most used words</p>
+        <img
+          src={cloud}
+          alt="Word Cloud"
+          className="mb-4 w-full max-w-2xl rounded shadow mx-auto"
+        />
+      </div>
+    )}
+
         {results.length > 0 && (
         <button 
           onClick={() => setShowEmotion(!showEmotion)}

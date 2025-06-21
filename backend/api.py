@@ -24,7 +24,8 @@ def analyze_user(username: str):
         tweets = get_recent_tweets(username)
         analyzer = TweetAnalyzer()
         results = analyzer.analyze_tweets(tweets)
-        return {"username": username, "results": results, 'info': profile_info}
+        word_cloud_encoding = analyzer.word_cloud([tweet for tweet, _ in tweets])
+        return {"username": username, "results": results, 'info': profile_info, 'word_cloud': f"data:image/png;base64,{word_cloud_encoding}"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     

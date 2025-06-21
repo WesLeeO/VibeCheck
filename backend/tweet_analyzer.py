@@ -2,7 +2,9 @@ from transformers import pipeline
 from collections import defaultdict
 import numpy as np
 from datetime import datetime
+import matplotlib
 import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 from wordcloud import WordCloud
 from io import BytesIO
 import base64
@@ -94,6 +96,7 @@ class TweetAnalyzer:
     # Implement your word cloud method here...
     def word_cloud(self, tweets):
         """Generate word cloud and return as base64 string"""
+        print('entered')
         wordcloud = WordCloud(width=800, height=400, background_color='white').generate(" ".join(tweets))
         fig, ax = plt.subplots(figsize=(10, 5))
         ax.imshow(wordcloud, interpolation='bilinear')
